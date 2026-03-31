@@ -470,60 +470,112 @@ nav {
   text-align: right;
   line-height: 1.6;
 }
-.service-row {
+/* ── SERVICE CARDS ── */
+.services-grid {
   display: grid;
-  grid-template-columns: 60px 1fr 1fr 80px;
-  align-items: center;
-  gap: 24px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.service-card {
+  background: var(--white);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.28s, box-shadow 0.28s;
   text-decoration: none;
   color: inherit;
-  transition: all 0.25s;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.service-row::before {
-  content: '';
-  position: absolute;
-  left: -40px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--orange);
-  opacity: 0;
-  transition: opacity 0.25s;
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.13);
 }
-.service-row:hover::before { opacity: 1; }
-.service-row:hover .service-name { color: var(--orange); }
-.service-num {
+.service-card-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.service-card:hover .service-card-img {
+  transform: scale(1.04);
+}
+.service-card-img-wrap {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.service-card-body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-card-name {
   font-family: 'Playfair Display', serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--border);
-  letter-spacing: 0.05em;
-}
-.service-name {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(22px, 2.5vw, 30px);
+  font-size: 19px;
   font-weight: 700;
   color: var(--navy);
-  transition: color 0.25s;
+  margin-bottom: 10px;
+  line-height: 1.25;
 }
-.service-desc {
-  font-size: 14px;
+.service-card-desc {
+  font-size: 13px;
   color: var(--muted);
-  line-height: 1.6;
-  max-width: 340px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
 }
-.service-arrow {
-  font-size: 20px;
-  color: var(--border);
-  text-align: right;
-  transition: color 0.25s, transform 0.25s;
-}
-.service-row:hover .service-arrow {
+.service-card-link {
+  font-size: 12px;
+  font-weight: 600;
   color: var(--orange);
-  transform: translateX(4px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.service-card:hover .service-card-link {
+  color: var(--orange-hov);
+}
+
+/* ── GALLERY STRIP ── */
+.gallery-strip {
+  background: var(--navy-deep);
+}
+.gallery-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery-item {
+  overflow: hidden;
+  height: 340px;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+  filter: brightness(0.88);
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+.gallery-item-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  pointer-events: none;
 }
 
 /* ── ABOUT ── */
@@ -1106,8 +1158,12 @@ footer {
 .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1200px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 1024px) {
   .wrap { padding: 0 28px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about-inner { grid-template-columns: 1fr; gap: 60px; }
   .about-img { max-width: 100%; height: 240px; }
   .cities-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1115,6 +1171,8 @@ footer {
   .cta-band-inner { grid-template-columns: 1fr; }
   .faq-inner { grid-template-columns: 1fr; }
   .faq-form-box { position: static; }
+  .gallery-strip-inner { grid-template-columns: 1fr 1fr; }
+  .gallery-item:last-child { display: none; }
 }
 @media (max-width: 768px) {
   .topbar .wrap { flex-direction: column; gap: 6px; text-align: center; }
@@ -1125,8 +1183,11 @@ footer {
   .stat-item { min-width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .services-header { flex-direction: column; gap: 16px; align-items: flex-start; }
   .services-header p { text-align: left; max-width: 100%; }
-  .service-row { grid-template-columns: 40px 1fr; gap: 12px; }
-  .service-desc, .service-arrow { display: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .service-card-img { height: 170px; }
+  .gallery-strip-inner { grid-template-columns: 1fr; }
+  .gallery-item { height: 240px; }
+  .gallery-item:last-child { display: block; }
   .reviews-head { flex-direction: column; gap: 20px; }
   .reviews-meta { text-align: left; }
   .reviews-grid { grid-template-columns: 1fr; }
@@ -1135,6 +1196,9 @@ footer {
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   section, .services-section, .about-section, .reviews-section, .faq-section { padding: 72px 0; }
+}
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1264,56 +1328,117 @@ footer {
       <p>From a single room refresh to a full exterior transformation — we bring the same care and craftsmanship to every project.</p>
     </div>
 
-    <a href="#estimate" class="service-row">
-      <span class="service-num">01</span>
-      <span class="service-name">Interior Painting</span>
-      <span class="service-desc">Transform any room with flawless color. Clean prep, sharp edges, zero mess left behind.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">02</span>
-      <span class="service-name">Exterior Painting</span>
-      <span class="service-desc">Boost curb appeal and protect your home from Georgia's weather with lasting paint systems.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">03</span>
-      <span class="service-name">Commercial Painting</span>
-      <span class="service-desc">Offices, retail, HOAs — professional results that make your business look its best.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">04</span>
-      <span class="service-name">Pressure Washing</span>
-      <span class="service-desc">Driveways, roofs, fences, siding — we blast away years of buildup before every paint job.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">05</span>
-      <span class="service-name">Wood Repair</span>
-      <span class="service-desc">Rotten siding, damaged trim, worn fascia — repaired right before the first coat goes on.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">06</span>
-      <span class="service-name">New Construction</span>
-      <span class="service-desc">Builders trust us for clean, on-schedule paint work that's ready for move-in day.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">07</span>
-      <span class="service-name">Residential Repainting</span>
-      <span class="service-desc">Ready for a fresh look? We prep, prime, and repaint to make your home feel brand new again.</span>
-      <span class="service-arrow">→</span>
-    </a>
-    <a href="#estimate" class="service-row">
-      <span class="service-num">08</span>
-      <span class="service-name">Deck &amp; Fence Staining</span>
-      <span class="service-desc">Protect and beautify outdoor wood surfaces with professional-grade stains and sealers.</span>
-      <span class="service-arrow">→</span>
-    </a>
+    <div class="services-grid">
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" alt="Interior Painting Lawrenceville GA" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Interior Painting</div>
+          <div class="service-card-desc">Flawless color from ceiling to baseboard — crisp lines, zero drips, spotless cleanup every day.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Exterior Painting Gwinnett County GA" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Exterior Painting</div>
+          <div class="service-card-desc">Boost curb appeal and protect your home from Georgia's heat, rain, and humidity with lasting finishes.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Commercial Painting Lawrenceville GA" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Commercial Painting</div>
+          <div class="service-card-desc">Offices, retail, HOAs — professional results on schedule so your business never skips a beat.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" alt="Pressure Washing Gwinnett County" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Pressure Washing</div>
+          <div class="service-card-desc">Driveways, roofs, fences, siding — we blast away years of buildup before every exterior project.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Wood Repair and Carpentry Lawrenceville GA" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Wood Repair</div>
+          <div class="service-card-desc">Rotten siding, damaged trim, worn fascia — fully repaired and primed before the first coat goes on.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="New Construction Painting Gwinnett County" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">New Construction</div>
+          <div class="service-card-desc">Builders rely on us for clean, on-schedule paint work that's move-in ready from day one.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Residential Repainting Lawrenceville GA" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Residential Repainting</div>
+          <div class="service-card-desc">Ready for a fresh look? We prep, prime, and repaint to make your home feel brand new again.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1622037022824-0c71d511ef3c?w=600&q=80" alt="Deck and Fence Staining Gwinnett County" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Deck &amp; Fence Staining</div>
+          <div class="service-card-desc">Protect and beautify outdoor wood with professional-grade stains and sealers that last for years.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-strip">
+  <div class="gallery-strip-inner">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=900&q=85" alt="Caesar's Painting interior project Lawrenceville GA" loading="lazy">
+      <div class="gallery-item-caption">Interior Transformation</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=85" alt="Caesar's Painting professional results" loading="lazy">
+      <div class="gallery-item-caption">Attention to Every Detail</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85" alt="Exterior painting Gwinnett County" loading="lazy">
+      <div class="gallery-item-caption">Exterior Excellence</div>
+    </div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
