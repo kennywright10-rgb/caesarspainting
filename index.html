@@ -219,7 +219,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 88px;
+  height: 224px;
 }
 .nav-logo {
   display: flex;
@@ -228,7 +228,7 @@ nav {
   flex-shrink: 0;
 }
 .nav-logo img {
-  height: 72px;
+  height: 216px;
   width: auto;
   display: block;
 }
@@ -1176,6 +1176,8 @@ footer {
   .topbar .wrap { flex-direction: column; gap: 6px; text-align: center; }
   .topbar-left, .topbar-right { justify-content: center; flex-wrap: wrap; }
   .nav-links { display: none; }
+  .nav-inner { height: 160px; }
+  .nav-logo img { height: 148px; }
   .hero-card { left: 16px; right: 16px; width: auto; bottom: 24px; padding: 28px 24px; }
   .stats-inner { flex-wrap: wrap; }
   .stat-item { min-width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
@@ -1197,6 +1199,8 @@ footer {
 }
 @media (max-width: 480px) {
   .services-grid { grid-template-columns: 1fr; }
+  .nav-inner { height: 140px; }
+  .nav-logo img { height: 128px; }
 }
 </style>
 </head>
