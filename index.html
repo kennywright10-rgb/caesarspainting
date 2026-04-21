@@ -178,6 +178,64 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--c
 }
 .btn-ghost-dark:hover { background: var(--navy); color: #fff; }
 
+/* ── MOBILE MENU ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px 4px;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile-menu {
+  display: none;
+  background: var(--navy-deep);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.nav-mobile-menu.open { max-height: 500px; }
+.nav-mobile-menu a {
+  display: block;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s, background 0.2s;
+}
+.nav-mobile-menu a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+.nav-mobile-menu .nav-mobile-cta {
+  display: block;
+  margin: 16px 20px 20px;
+  padding: 15px;
+  background: var(--orange);
+  color: #fff !important;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  border-bottom: none !important;
+}
+.nav-mobile-menu .nav-mobile-cta:hover { background: var(--orange-hov) !important; }
+
 /* ── TOPBAR ── */
 .topbar {
   background: var(--navy-deep);
@@ -1176,6 +1234,9 @@ footer {
   .topbar .wrap { flex-direction: column; gap: 6px; text-align: center; }
   .topbar-left, .topbar-right { justify-content: center; flex-wrap: wrap; }
   .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile-menu { display: block; }
+  .nav-phone { display: none; }
   .nav-inner { height: 80px; }
   .nav-logo img { height: 64px; }
   .hero-card { left: 16px; right: 16px; width: auto; bottom: 24px; padding: 28px 24px; }
@@ -1198,9 +1259,19 @@ footer {
   section, .services-section, .about-section, .reviews-section, .faq-section { padding: 72px 0; }
 }
 @media (max-width: 480px) {
+  .topbar { display: none; }
+  .wrap { padding: 0 16px; }
   .services-grid { grid-template-columns: 1fr; }
   .nav-inner { height: 72px; }
   .nav-logo img { height: 56px; }
+  .hero { min-height: 100svh; }
+  .hero-card { padding: 24px 18px; bottom: 16px; }
+  .stat-item { min-width: 100%; }
+  .btn-primary { padding: 13px 22px; font-size: 13px; }
+  section, .services-section, .about-section, .reviews-section, .faq-section { padding: 56px 0; }
+  .featured-review { padding: 32px 20px; }
+  .featured-review::before { font-size: 80px; top: -8px; left: 20px; }
+  .cta-band { padding: 60px 0; }
 }
 </style>
 </head>
@@ -1237,9 +1308,23 @@ footer {
     <div class="nav-right">
       <a href="tel:4049163260" class="nav-phone">(404) 916-3260</a>
       <a href="#estimate" class="btn-primary">Free Estimate</a>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#cities">Cities</a>
+  <a href="#faq">FAQ</a>
+  <a href="tel:4049163260">&#9742; (404) 916-3260</a>
+  <a href="#estimate" class="nav-mobile-cta">Get a Free Estimate</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1796,6 +1881,27 @@ footer {
 </footer>
 
 <script>
+// Mobile hamburger menu
+(function() {
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.querySelector('.nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+  });
+  menu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+    });
+  });
+})();
+
 function toggleFaq(el) {
   const item = el.parentElement;
   const icon = el.querySelector('.faq-icon');
