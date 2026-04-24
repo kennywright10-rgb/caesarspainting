@@ -1274,6 +1274,139 @@ footer {
   .featured-review::before { font-size: 80px; top: -8px; left: 20px; }
   .cta-band { padding: 60px 0; }
 }
+
+/* ── TRUST STRIP ── */
+.trust-strip {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+.trust-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px;
+  border-right: 1px solid #e8e8e8;
+}
+.trust-item:last-child { border-right: none; }
+.trust-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #F5C842;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.trust-text { line-height: 1.35; }
+.trust-text strong { display: block; font-size: 13px; font-weight: 700; color: #1a2a3a; }
+.trust-text span { font-size: 11.5px; color: #777; }
+
+/* ── BRANDS STRIP ── */
+.brands-strip {
+  background: var(--cream);
+  padding: 32px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.brands-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.brands-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-right: 8px;
+}
+.brand-pill {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.3px;
+}
+
+/* ── WHY CAESARS ── */
+.why-section {
+  background: var(--navy-deep);
+  padding: 100px 0;
+}
+.why-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.why-header .label { margin-bottom: 12px; }
+.why-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.why-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 36px 28px;
+  transition: background 0.25s, border-color 0.25s;
+}
+.why-card:hover {
+  background: rgba(245,200,66,0.07);
+  border-color: rgba(245,200,66,0.3);
+}
+.why-card-icon {
+  font-size: 32px;
+  margin-bottom: 18px;
+  display: block;
+}
+.why-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.why-card-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+}
+
+/* ── RESPONSIVE: trust/why/brands ── */
+@media (max-width: 900px) {
+  .trust-strip-inner { grid-template-columns: repeat(2, 1fr); }
+  .trust-item:nth-child(2) { border-right: none; }
+  .trust-item:nth-child(3) { border-top: 1px solid #e8e8e8; }
+  .trust-item:nth-child(4) { border-top: 1px solid #e8e8e8; border-right: none; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .trust-strip-inner { grid-template-columns: 1fr; }
+  .trust-item { border-right: none; border-top: 1px solid #e8e8e8; }
+  .trust-item:first-child { border-top: none; }
+  .why-grid { grid-template-columns: 1fr; }
+  .brands-inner { gap: 16px; }
+}
+
 </style>
 </head>
 <body>
@@ -1510,6 +1643,30 @@ footer {
   </div>
 </section>
 
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="wrap trust-strip-inner">
+    <div class="trust-item">
+      <span class="trust-icon">🛡</span>
+      <span class="trust-text"><strong>2-Year Workmanship Warranty</strong><span>Written guarantee on every job</span></strong></span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">✓</span>
+      <span class="trust-text"><strong>Licensed &amp; Insured</strong><span>Fully protected in Georgia</span></span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🎨</span>
+      <span class="trust-text"><strong>Free Color Consultation</strong><span>Expert guidance, zero pressure</span></span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">⚡</span>
+      <span class="trust-text"><strong>Same-Day Estimates</strong><span>Cesar personally reviews all quotes</span></span>
+    </div>
+  </div>
+</div>
+
+
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
   <div class="gallery-strip-inner">
@@ -1527,6 +1684,51 @@ footer {
     </div>
   </div>
 </div>
+
+
+<!-- PAINT BRANDS -->
+<div class="brands-strip">
+  <div class="wrap brands-inner">
+    <span class="brands-label">Premium paints by</span>
+    <span class="brand-pill">Sherwin-Williams</span>
+    <span class="brand-pill">Benjamin Moore</span>
+    <span class="brand-pill">Behr Professional</span>
+    <span class="brand-pill">PPG</span>
+  </div>
+</div>
+
+
+<!-- WHY CAESARS -->
+<section class="why-section">
+  <div class="wrap">
+    <div class="why-header">
+      <span class="label">Why Homeowners Choose Us</span>
+      <h2>The Caesar's Painting Difference</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-card-icon">🏅</span>
+        <div class="why-card-title">Premium Materials Only</div>
+        <p class="why-card-desc">We use Sherwin-Williams, Benjamin Moore, and Behr Professional on every job — never discount-brand fillers. Better paint means a finish that lasts years longer.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-icon">🛡</span>
+        <div class="why-card-title">2-Year Workmanship Warranty</div>
+        <p class="why-card-desc">Every project comes with a written 2-year guarantee on our workmanship. If something isn't right, we come back and fix it. No arguments, no fine print.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-icon">👷</span>
+        <div class="why-card-title">Owner On Every Job</div>
+        <p class="why-card-desc">Cesar personally oversees every project from estimate to final walkthrough. You're not handing off to a subcontractor — you're working directly with the owner.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-icon">🧹</span>
+        <div class="why-card-title">Zero-Mess Promise</div>
+        <p class="why-card-desc">Full floor and furniture protection, daily cleanup, and a final walkthrough before we leave. Your home should be cleaner when we're done than when we arrived.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="about-section" id="about">
