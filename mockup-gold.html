@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caesar's Painting — Gold & Black Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:       #C9A84C;
+  --gold-light: #E2C472;
+  --gold-deep:  #A8862D;
+  --black:      #0D0D0D;
+  --charcoal:   #1A1A1A;
+  --charcoal-2: #242424;
+  --white:      #FFFFFF;
+  --off-white:  #F8F6F2;
+  --muted:      #888888;
+  --border-dark: rgba(201,168,76,0.18);
+  --border-light: rgba(0,0,0,0.1);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--white); background: var(--black); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-gold:hover { background: var(--gold-light); }
+
+.btn-outline-gold {
+  display: inline-block;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 14px 32px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-outline-gold:hover { background: var(--gold); color: var(--black); }
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--black);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 9px 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.02em;
+}
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; }
+.topbar-left { display: flex; gap: 28px; align-items: center; }
+.topbar a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+.topbar a:hover { color: var(--gold); }
+.topbar strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+.topbar-badge {
+  background: var(--gold);
+  color: var(--black);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--charcoal);
+  border-bottom: 1px solid var(--border-dark);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.nav-logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+  /* Gold filter for black PNG logo */
+  filter: brightness(0) saturate(100%) invert(72%) sepia(55%) saturate(450%) hue-rotate(5deg) brightness(98%);
+}
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 8px 16px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-phone {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-phone:hover { color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 620px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=85');
+  background-size: cover;
+  background-position: 65% center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+/* gold gradient vignette on left */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.5) 45%, transparent 75%);
+}
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
+  max-width: 660px;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.hero-content h1 span { color: var(--gold); }
+.hero-content p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+.hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.hero-phone {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero-phone:hover { color: var(--gold); }
+
+.hero-stats-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(13,13,13,0.88);
+  border-top: 1px solid var(--border-dark);
+  backdrop-filter: blur(8px);
+}
+.hero-stats-inner {
+  display: flex;
+  align-items: stretch;
+}
+.hero-stat {
+  flex: 1;
+  padding: 22px 0;
+  text-align: center;
+  border-right: 1px solid var(--border-dark);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── PLAN ── */
+.plan-strip {
+  background: var(--charcoal-2);
+  border-bottom: 1px solid var(--border-dark);
+}
+.plan-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid var(--border-dark);
+}
+.plan-step {
+  padding: 52px 44px;
+  border-right: 1px solid var(--border-dark);
+  position: relative;
+}
+.plan-step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: rgba(201,168,76,0.12);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.plan-step h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.plan-step p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.65;
+}
+.plan-step-arrow {
+  position: absolute;
+  top: 50%;
+  right: -13px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--charcoal-2);
+  border: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--gold);
+  z-index: 1;
+  font-weight: 700;
+}
+.plan-step:last-child .plan-step-arrow { display: none; }
+
+/* ── SERVICES ── */
+.services-section {
+  background: var(--black);
+  padding: 120px 0;
+}
+.services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-dark);
+}
+.services-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  max-width: 480px;
+}
+.services-header p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 280px;
+  text-align: right;
+  line-height: 1.6;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--border-dark);
+}
+.service-card {
+  background: var(--charcoal);
+  overflow: hidden;
+  transition: background 0.25s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.service-card:hover { background: var(--charcoal-2); }
+.service-card-img-wrap { overflow: hidden; flex-shrink: 0; }
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s;
+  filter: brightness(0.75) saturate(0.9);
+}
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+  filter: brightness(0.85) saturate(1);
+}
+.service-card-body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 2px solid transparent;
+  transition: border-color 0.25s;
+}
+.service-card:hover .service-card-body { border-top-color: var(--gold); }
+.service-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.service-card-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.service-card-link {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── GALLERY ── */
+.gallery-strip { background: var(--charcoal); }
+.gallery-strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+.gallery-item { overflow: hidden; height: 340px; position: relative; }
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.5s;
+  filter: brightness(0.7) saturate(0.8);
+}
+.gallery-item:hover img { transform: scale(1.05); filter: brightness(0.85) saturate(1); }
+.gallery-item-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); pointer-events: none;
+}
+
+/* ── ABOUT ── */
+.about-section {
+  background: var(--charcoal-2);
+  padding: 120px 0;
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.about-quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 120px;
+  color: rgba(201,168,76,0.12);
+  line-height: 0.6;
+  margin-bottom: 32px;
+  display: block;
+}
+.about-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 24px;
+}
+.about-attribution {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 40px;
+}
+.about-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(30%) brightness(0.85);
+  border: 1px solid var(--border-dark);
+}
+.about-right .label { color: var(--gold); }
+.about-right h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 48px;
+}
+.reason {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-dark);
+}
+.reason:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.reason-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.reason-body h3 { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 5px; }
+.reason-body p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; }
+
+/* ── REVIEWS ── */
+.reviews-section {
+  background: var(--black);
+  padding: 120px 0;
+}
+.reviews-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-dark);
+}
+.reviews-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--white);
+  max-width: 500px;
+  line-height: 1.1;
+}
+.reviews-meta { text-align: right; }
+.reviews-meta .big-rating {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.reviews-meta .stars { color: var(--gold); font-size: 18px; letter-spacing: 3px; display: block; margin: 4px 0 6px; }
+.reviews-meta .count { font-size: 12px; color: var(--muted); }
+
+.featured-review {
+  background: var(--charcoal);
+  border: 1px solid var(--border-dark);
+  border-left: 3px solid var(--gold);
+  padding: 56px 64px;
+  margin-bottom: 4px;
+  position: relative;
+}
+.featured-review::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 200px;
+  color: rgba(201,168,76,0.06);
+  position: absolute;
+  top: -20px;
+  left: 48px;
+  line-height: 1;
+  pointer-events: none;
+}
+.featured-review blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 32px;
+  position: relative;
+  max-width: 820px;
+}
+.featured-review cite { display: flex; align-items: center; gap: 16px; font-style: normal; }
+.cite-avatar {
+  width: 44px; height: 44px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cite-name { font-size: 14px; font-weight: 600; color: var(--white); }
+.cite-loc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.cite-stars { margin-left: auto; color: var(--gold); font-size: 16px; letter-spacing: 2px; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border-dark);
+  margin-top: 2px;
+}
+.review-tile {
+  background: var(--charcoal);
+  padding: 36px 32px;
+}
+.review-tile .stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-bottom: 16px; }
+.review-tile p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.55); margin-bottom: 24px; }
+.review-tile-author { display: flex; align-items: center; gap: 12px; }
+.tile-avatar {
+  width: 36px; height: 36px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.tile-name { font-size: 13px; font-weight: 600; color: var(--white); }
+.tile-loc { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+/* ── CTA BAND ── */
+.cta-band {
+  background: var(--gold);
+  padding: 100px 0;
+}
+.cta-band-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+.cta-band h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.cta-band p { font-size: 16px; color: rgba(0,0,0,0.6); max-width: 480px; }
+.cta-band-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; flex-shrink: 0; }
+.btn-black {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 15px 36px; text-decoration: none; transition: background 0.2s;
+}
+.btn-black:hover { background: var(--charcoal-2); }
+.btn-outline-black {
+  display: inline-block;
+  border: 1.5px solid var(--black);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 14px 32px; text-decoration: none; transition: background 0.2s, color 0.2s;
+}
+.btn-outline-black:hover { background: var(--black); color: var(--white); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--charcoal);
+  border-top: 1px solid var(--border-dark);
+  padding: 80px 0 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--border-dark);
+  margin-bottom: 36px;
+}
+.footer-brand img {
+  height: 52px; width: auto; display: block; margin-bottom: 20px;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(55%) saturate(450%) hue-rotate(5deg) brightness(98%);
+}
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.8; max-width: 260px; margin-bottom: 24px; }
+.footer-contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.footer-contact-row a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-contact-row a:hover { color: var(--gold); }
+.footer-col h4 {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.18); }
+.footer-bottom a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; }
+
+/* ── GOLD DIVIDER ── */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+/* ── CONCEPT BADGE ── */
+.concept-badge {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+<body>
+
+<!-- CONCEPT BADGE -->
+<div class="concept-badge">⬡ Concept Mockup</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <span><strong>Mon–Fri</strong> 7am–6pm &nbsp;·&nbsp; <strong>Sat</strong> 8am–3pm</span>
+      <span class="topbar-badge">Licensed &amp; Insured</span>
+      <span>Serving Gwinnett · Forsyth · Barrow Counties</span>
+    </div>
+    <div style="display:flex;gap:28px;align-items:center;">
+      <a href="mailto:info@caesarspainting.com">info@caesarspainting.com</a>
+      <a href="tel:4049163260"><strong>(404) 916-3260</strong></a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#" style="display:flex;align-items:center;text-decoration:none;">
+      <img src="logo.png" alt="Caesar's Painting" style="height:56px;width:auto;display:block;filter:brightness(0) saturate(100%) invert(72%) sepia(55%) saturate(450%) hue-rotate(5deg) brightness(98%);">
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#cities">Cities</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:4049163260" class="nav-phone">(404) 916-3260</a>
+      <a href="#estimate" class="btn-gold">Free Estimate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Lawrenceville, Georgia</div>
+    <h1>Fall in Love<br>With Your <span>Home</span><br>Again.</h1>
+    <p>Your satisfaction is our only goal — from the first coat of primer to the final walkthrough with Cesar himself.</p>
+    <div class="hero-actions">
+      <a href="#estimate" class="btn-gold">Schedule Free Estimate</a>
+      <a href="tel:4049163260" class="hero-phone">(404) 916-3260</a>
+    </div>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="wrap hero-stats-inner">
+      <div class="hero-stat">
+        <span class="hero-stat-num">94</span>
+        <div class="hero-stat-label">★★★★★ &nbsp;Google Reviews</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5.0</span>
+        <div class="hero-stat-label">Perfect Rating</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <div class="hero-stat-label">Free Estimates</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">7+</span>
+        <div class="hero-stat-label">Cities Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- PLAN STRIP -->
+<div class="plan-strip">
+  <div class="wrap plan-inner">
+    <div class="plan-step">
+      <div class="plan-step-num">01</div>
+      <h3>Call for a Free Estimate</h3>
+      <p>Cesar personally reviews every request and responds within 2 hours — no obligation, no pressure.</p>
+      <span class="plan-step-arrow">→</span>
+    </div>
+    <div class="plan-step">
+      <div class="plan-step-num">02</div>
+      <h3>We Prep, Paint &amp; Clean Up</h3>
+      <p>Power wash, sand, caulk, and prime before a drop of paint touches your walls. Clean site every day.</p>
+      <span class="plan-step-arrow">→</span>
+    </div>
+    <div class="plan-step">
+      <div class="plan-step-num">03</div>
+      <h3>Love Your Home Again</h3>
+      <p>If any detail isn't perfect, we come back and make it right — no charge, no argument, guaranteed.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="services-header">
+      <div>
+        <span class="label">What We Do</span>
+        <h2>Every Surface.<br>Every Job.<br>Done Right.</h2>
+      </div>
+      <p>From a single room refresh to a full exterior transformation — the same care on every project.</p>
+    </div>
+
+    <div class="services-grid">
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" alt="Interior Painting" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Interior Painting</div>
+          <div class="service-card-desc">Flawless color from ceiling to baseboard — crisp lines, zero drips, clean every day.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Exterior Painting" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Exterior Painting</div>
+          <div class="service-card-desc">Boost curb appeal and protect your home from Georgia's weather with lasting finishes.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Commercial Painting" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Commercial Painting</div>
+          <div class="service-card-desc">Offices, retail, HOAs — professional results that make your business look its best.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" alt="Pressure Washing" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Pressure Washing</div>
+          <div class="service-card-desc">Driveways, roofs, fences, siding — we blast away years of buildup before every project.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Wood Repair" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Wood Repair</div>
+          <div class="service-card-desc">Rotten siding, damaged trim, worn fascia — repaired and primed before the first coat goes on.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="New Construction" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">New Construction</div>
+          <div class="service-card-desc">Builders trust us for clean, on-schedule paint work that's ready for move-in day.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Residential Repainting" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Residential Repainting</div>
+          <div class="service-card-desc">Ready for a fresh look? We prep, prime, and repaint to make your home feel brand new.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+      <a href="#estimate" class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1622037022824-0c71d511ef3c?w=600&q=80" alt="Deck Staining" loading="lazy">
+        </div>
+        <div class="service-card-body">
+          <div class="service-card-name">Deck &amp; Fence Staining</div>
+          <div class="service-card-desc">Protect and beautify outdoor wood with professional-grade stains and sealers that last.</div>
+          <span class="service-card-link">Get a Free Quote →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-strip">
+  <div class="gallery-strip-inner">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?w=900&q=85" alt="Interior transformation" loading="lazy">
+      <div class="gallery-item-caption">Interior Transformation</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=85" alt="Attention to detail" loading="lazy">
+      <div class="gallery-item-caption">Attention to Every Detail</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85" alt="Exterior excellence" loading="lazy">
+      <div class="gallery-item-caption">Exterior Excellence</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="wrap about-inner">
+    <div>
+      <span class="about-quote-mark">"</span>
+      <p class="about-quote">I treat every home like it's my own. That's not a slogan — that's how I was raised to work.</p>
+      <p class="about-attribution">— Cesar Reyes, Owner &amp; Lead Painter</p>
+      <img class="about-img" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Cesar Reyes at work" loading="lazy">
+    </div>
+    <div>
+      <span class="label">Why Caesar's Painting</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,38px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:48px;">We Paint with<br>Care, Pride &amp;<br>Purpose</h2>
+      <div class="reason">
+        <span class="reason-num">01</span>
+        <div class="reason-body">
+          <h3>Family-Owned &amp; Personally Supervised</h3>
+          <p>When Cesar shows up, you're working directly with the owner. He oversees every job, every detail.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <span class="reason-num">02</span>
+        <div class="reason-body">
+          <h3>Licensed, Insured &amp; Fully Certified</h3>
+          <p>Full general liability and workers' comp. You're protected on every project, period.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <span class="reason-num">03</span>
+        <div class="reason-body">
+          <h3>Thorough Prep — No Shortcuts</h3>
+          <p>Power wash, sand, caulk, and prime before a single drop of paint. That's why our finishes last.</p>
+        </div>
+      </div>
+      <div class="reason">
+        <span class="reason-num">04</span>
+        <div class="reason-body">
+          <h3>100% Satisfaction Guarantee</h3>
+          <p>Not completely happy? We come back and make it right — no arguments, no extra charge.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <span class="label">Customer Reviews</span>
+        <h2>What Our<br>Neighbors Are Saying</h2>
+      </div>
+      <div class="reviews-meta">
+        <div class="big-rating">5.0</div>
+        <span class="stars">★★★★★</span>
+        <span class="count">Based on 94 Google Reviews</span>
+      </div>
+    </div>
+
+    <div class="featured-review">
+      <blockquote>"Cesar and his team transformed our entire downstairs. The prep work alone was incredible — they caulked every gap, sanded every rough spot. The finish looks like something out of a magazine."</blockquote>
+      <cite>
+        <div class="cite-avatar">M</div>
+        <div>
+          <div class="cite-name">Maria L.</div>
+          <div class="cite-loc">Lawrenceville, GA</div>
+        </div>
+        <span class="cite-stars">★★★★★</span>
+      </cite>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-tile">
+        <div class="stars">★★★★★</div>
+        <p>"Caesar's team was professional, respectful, and left zero mess. Cesar personally walked us through everything. The whole neighborhood noticed."</p>
+        <div class="review-tile-author">
+          <div class="tile-avatar">J</div>
+          <div><div class="tile-name">James &amp; Tanya R.</div><div class="tile-loc">Buford, GA</div></div>
+        </div>
+      </div>
+      <div class="review-tile">
+        <div class="stars">★★★★★</div>
+        <p>"I was nervous about hiring a painter — I'd had bad experiences before. Caesar's was completely different. On time, fair price, gorgeous work."</p>
+        <div class="review-tile-author">
+          <div class="tile-avatar">D</div>
+          <div><div class="tile-name">Diana K.</div><div class="tile-loc">Snellville, GA</div></div>
+        </div>
+      </div>
+      <div class="review-tile">
+        <div class="stars">★★★★★</div>
+        <p>"Cesar fixed rotted wood on our siding AND painted the whole house. One crew, one call, flawless result. The house looks better than ever."</p>
+        <div class="review-tile-author">
+          <div class="tile-avatar">R</div>
+          <div><div class="tile-name">Robert &amp; Lisa H.</div><div class="tile-loc">Alpharetta, GA</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="wrap cta-band-inner">
+    <div>
+      <h2>Ready to Fall in Love<br>with Your Home Again?</h2>
+      <p>Get a free, no-pressure estimate from Cesar himself — usually within 24 hours. No obligation, ever.</p>
+    </div>
+    <div class="cta-band-actions">
+      <a href="#estimate" class="btn-black">Request a Free Estimate</a>
+      <a href="tel:4049163260" class="btn-outline-black">Call (404) 916-3260</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Caesar's Painting">
+        <p>Professional painting services across Gwinnett, Forsyth &amp; Barrow Counties since day one. Quality you can see. Satisfaction guaranteed.</p>
+        <div class="footer-contact-row"><a href="tel:4049163260">(404) 916-3260</a></div>
+        <div class="footer-contact-row"><a href="mailto:info@caesarspainting.com">info@caesarspainting.com</a></div>
+        <div class="footer-contact-row"><span style="font-size:13px;color:rgba(255,255,255,0.3);">Lawrenceville, GA 30046</span></div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Interior Painting</a></li>
+          <li><a href="#">Exterior Painting</a></li>
+          <li><a href="#">Commercial Painting</a></li>
+          <li><a href="#">Pressure Washing</a></li>
+          <li><a href="#">Wood Repair</a></li>
+          <li><a href="#">Deck Staining</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Area</h4>
+        <ul>
+          <li><a href="#">Lawrenceville</a></li>
+          <li><a href="#">Buford</a></li>
+          <li><a href="#">Snellville</a></li>
+          <li><a href="#">Cumming</a></li>
+          <li><a href="#">Alpharetta</a></li>
+          <li><a href="#">Winder</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <div class="footer-hours">
+          <strong>Business Hours</strong>
+          Mon–Fri: 7:00am – 6:00pm<br>
+          Saturday: 8:00am – 3:00pm<br>
+          Sunday: Closed
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Caesar's Painting · Lawrenceville, GA · All Rights Reserved</p>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caesar's Painting | #1 Painters in Lawrenceville GA | (404) 916-3260</title>
-<meta name="description" content="Caesar's Painting — Lawrenceville, GA's top-rated painting company. Interior, exterior, commercial & residential painting, pressure washing & wood repair. Serving Lawrenceville, Buford, Snellville, Loganville, Cumming, Winder & Alpharetta. Free estimates. Call (404) 916-3260.">
+<title>Caesar's Painting | Painters in Alpharetta & North Atlanta, GA | (404) 916-3260</title>
+<meta name="description" content="Caesar's Painting — 5-star rated painting contractor in Alpharetta, Cumming, Johns Creek, Duluth, Roswell & North Atlanta, GA. Interior, exterior, cabinet painting, deck staining & pressure washing. Licensed & insured. Free estimates — (404) 916-3260.">
 <meta name="keywords" content="painting contractor Lawrenceville GA, house painter Buford GA, exterior painting Snellville GA, interior painting Alpharetta GA, pressure washing Cumming GA, commercial painting Gwinnett County, residential painter Loganville GA, wood repair painter Winder GA">
 
 <!-- Geographic SEO -->
@@ -15,10 +15,10 @@
 <meta name="language" content="English">
 <meta name="revisit-after" content="7 days">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://caesarspainting.com/">
+<link rel="canonical" href="https://www.caesarspainting.com/">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Caesar's Painting | Professional Painters in Lawrenceville, GA">
+<meta property="og:title" content="Caesar's Painting | Painters in Alpharetta & North Atlanta, GA">
 <meta property="og:description" content="Top-rated painting contractor in Gwinnett & Forsyth Counties. Interior, exterior, commercial, residential, pressure washing & wood repair. Free estimates!">
 <meta property="og:url" content="https://caesarspainting.com">
 <meta property="og:type" content="website">
@@ -81,7 +81,7 @@
         {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "15:00"}
       ],
-      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "94", "bestRating": "5", "worstRating": "1"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": 5.0, "reviewCount": 4, "bestRating": 5, "worstRating": 1},
       "sameAs": [
         "https://www.google.com/maps/place/caesarspainting",
         "https://www.facebook.com/caesarspainting",
@@ -264,6 +264,18 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--c
   text-transform: uppercase;
   padding: 3px 10px;
 }
+
+/* ── REVIEW BAR (homepage) ── */
+.review-bar { background: var(--navy-deep); padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.review-bar-inner { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.review-bar-rating { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.review-bar-stars { color: #F5C842; font-size: 15px; letter-spacing: 1px; }
+.review-bar-score { font-size: 15px; font-weight: 700; color: #fff; }
+.review-bar-count { font-size: 12px; color: rgba(255,255,255,0.45); }
+.review-bar-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+.review-bar-quote { font-size: 13px; color: rgba(255,255,255,0.55); font-style: italic; flex: 1; min-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.review-bar-source { display: flex; align-items: center; gap: 5px; font-size: 12px; color: rgba(255,255,255,0.35); flex-shrink: 0; margin-left: auto; }
+
 
 /* ── NAV ── */
 nav {
@@ -862,6 +874,16 @@ nav {
   margin-top: 40px;
   text-align: center;
 }
+
+/* ── REVIEW SKELETON (loading state) ── */
+.review-skeleton { animation: skeleton-pulse 1.4s ease-in-out infinite; }
+.review-skeleton p { background: rgba(255,255,255,0.08); height: 72px; border-radius: 3px; }
+.review-skeleton .tile-name { background: rgba(255,255,255,0.08); height: 12px; width: 80px; border-radius: 3px; display: block; }
+.review-skeleton .tile-avatar { background: rgba(255,255,255,0.1); }
+@keyframes skeleton-pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+/* Review tile author photo support */
+.tile-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+
 .reviews-cta a {
   font-size: 13px;
   font-weight: 500;
@@ -1460,12 +1482,30 @@ footer {
   <a href="#estimate" class="nav-mobile-cta">Get a Free Estimate</a>
 </div>
 
+
+<!-- REVIEW BAR -->
+<div class="review-bar">
+  <div class="wrap review-bar-inner">
+    <div class="review-bar-rating">
+      <span class="review-bar-stars">★★★★★</span>
+      <span class="review-bar-score">5.0</span>
+      <span class="review-bar-count">4 Google Reviews</span>
+    </div>
+    <div class="review-bar-divider"></div>
+    <p class="review-bar-quote">"Very good pricing and one of the finest quality work I have seen. Totally recommend them."</p>
+    <div class="review-bar-source">
+      <svg width="14" height="14" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.2l6.7-6.7C35.7 2.4 30.2 0 24 0 14.7 0 6.7 5.5 2.7 13.5l7.8 6.1C12.5 13.3 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.7-.2-3.3-.4-4.9H24v9.3h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.3-4 6.8-9.9 6.8-17.2l.3-.2z"/><path fill="#FBBC05" d="M10.5 28.4c-.5-1.4-.8-2.9-.8-4.4s.3-3 .8-4.4L2.7 13.5C1 16.9 0 20.3 0 24s1 7.1 2.7 10.5l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2.1 1.4-4.7 2.2-7.7 2.2-6.2 0-11.5-3.8-13.5-9.2l-7.8 6.1C6.7 43.4 14.7 48 24 48z"/></svg>
+      <span>Google</span>
+    </div>
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-card">
-    <div class="hero-card-eyebrow">Lawrenceville, Georgia</div>
+    <div class="hero-card-eyebrow">Alpharetta &amp; North Atlanta, Georgia</div>
     <h1>Fall in Love With<br>Your Home Again.</h1>
     <p class="hero-card-sub">Your satisfaction is our only goal — from the first coat of primer to the final walkthrough with Cesar himself.</p>
     <div class="hero-card-stats">
@@ -1795,63 +1835,36 @@ footer {
         <span class="label">Customer Reviews</span>
         <h2>What Our<br>Neighbors Are Saying</h2>
       </div>
-      <div class="reviews-meta">
-        <div class="big-rating">5.0</div>
+      <div class="reviews-meta" id="reviews-meta">
+        <div class="big-rating" id="live-rating">5.0</div>
         <span class="stars">★★★★★</span>
-        <span class="count">Based on 94 Google Reviews</span>
+        <span class="count" id="live-count">Based on Google Reviews</span>
       </div>
     </div>
 
-    <div class="featured-review">
-      <blockquote>"Cesar and his team transformed our entire downstairs. The prep work alone was incredible — they caulked every gap, sanded every rough spot. The finish looks like something out of a magazine."</blockquote>
+    <!-- Featured review — populated by JS, falls back to first real review -->
+    <div class="featured-review" id="featured-review">
+      <blockquote id="featured-quote">"Very good pricing and one of the finest quality work I have seen. Totally recommend them."</blockquote>
       <cite>
-        <div class="cite-avatar">M</div>
+        <div class="cite-avatar" id="featured-avatar">M</div>
         <div>
-          <div class="cite-name">Maria L.</div>
-          <div class="cite-loc">Lawrenceville, GA</div>
+          <div class="cite-name" id="featured-name">Michael T.</div>
+          <div class="cite-loc" id="featured-loc">Alpharetta, GA</div>
         </div>
         <span class="cite-stars">★★★★★</span>
       </cite>
     </div>
 
-    <div class="reviews-grid">
-      <div class="review-tile">
-        <div class="stars">★★★★★</div>
-        <p>"We had our exterior painted and the whole neighborhood noticed. Caesar's team was professional, respectful, and left zero mess. Cesar personally walked us through everything."</p>
-        <div class="review-tile-author">
-          <div class="tile-avatar">J</div>
-          <div>
-            <div class="tile-name">James &amp; Tanya R.</div>
-            <div class="tile-loc">Buford, GA</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-tile">
-        <div class="stars">★★★★★</div>
-        <p>"I was nervous about hiring a painter — I'd had bad experiences before. Caesar's was completely different. On time, fair price, gorgeous work. Our kitchen looks brand new!"</p>
-        <div class="review-tile-author">
-          <div class="tile-avatar">D</div>
-          <div>
-            <div class="tile-name">Diana K.</div>
-            <div class="tile-loc">Snellville, GA</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-tile">
-        <div class="stars">★★★★★</div>
-        <p>"Cesar fixed rotted wood on our siding AND painted the whole house. One crew, one call, flawless result. The house looks better than when we first moved in 12 years ago."</p>
-        <div class="review-tile-author">
-          <div class="tile-avatar">R</div>
-          <div>
-            <div class="tile-name">Robert &amp; Lisa H.</div>
-            <div class="tile-loc">Alpharetta, GA</div>
-          </div>
-        </div>
-      </div>
+    <!-- Grid reviews — populated by JS -->
+    <div class="reviews-grid" id="reviews-grid">
+      <!-- Skeleton tiles shown while loading -->
+      <div class="review-tile review-skeleton"><div class="stars">★★★★★</div><p></p><div class="review-tile-author"><div class="tile-avatar"></div><div><div class="tile-name"></div></div></div></div>
+      <div class="review-tile review-skeleton"><div class="stars">★★★★★</div><p></p><div class="review-tile-author"><div class="tile-avatar"></div><div><div class="tile-name"></div></div></div></div>
+      <div class="review-tile review-skeleton"><div class="stars">★★★★★</div><p></p><div class="review-tile-author"><div class="tile-avatar"></div><div><div class="tile-name"></div></div></div></div>
     </div>
 
     <div class="reviews-cta">
-      <a href="https://www.google.com/maps/place/caesarspainting" target="_blank" rel="noopener">Read all 94 reviews on Google &nbsp;→</a>
+      <a href="https://search.google.com/local/reviews?placeid=ChIJEXg3ccO99YgRGuY3jy081mA" id="reviews-google-link" target="_blank" rel="noopener">Read all our reviews on Google &nbsp;→</a>
     </div>
   </div>
 </section>
@@ -2046,24 +2059,24 @@ footer {
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Interior Painting</a></li>
-          <li><a href="#services">Exterior Painting</a></li>
-          <li><a href="#services">Commercial Painting</a></li>
-          <li><a href="#services">Pressure Washing</a></li>
-          <li><a href="#services">Wood Repair</a></li>
-          <li><a href="#services">New Construction</a></li>
+          <li><a href="/interior-painting">Interior Painting</a></li>
+          <li><a href="/exterior-painting">Exterior Painting</a></li>
+          <li><a href="/commercial-painting">Commercial Painting</a></li>
+          <li><a href="/pressure-washing">Pressure Washing</a></li>
+          <li><a href="/exterior-painting">Wood Repair &amp; Painting</a></li>
+          <li><a href="/new-construction">New Construction</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Cities Served</h4>
         <ul>
-          <li><a href="#cities">Lawrenceville</a></li>
-          <li><a href="#cities">Buford</a></li>
-          <li><a href="#cities">Snellville</a></li>
-          <li><a href="#cities">Loganville</a></li>
-          <li><a href="#cities">Cumming</a></li>
-          <li><a href="#cities">Winder</a></li>
-          <li><a href="#cities">Alpharetta</a></li>
+          <li><a href="/lawrenceville">Lawrenceville</a></li>
+          <li><a href="/buford">Buford</a></li>
+          <li><a href="/gwinnett-county">Snellville</a></li>
+          <li><a href="/gwinnett-county">Loganville</a></li>
+          <li><a href="/cumming">Cumming</a></li>
+          <li><a href="/service-area">Winder</a></li>
+          <li><a href="/alpharetta">Alpharetta</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2077,7 +2090,7 @@ footer {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Caesar's Painting · Lawrenceville, GA · All rights reserved.</p>
+      <p>&copy; 2025 Caesar's Painting LLC · Alpharetta, GA · All rights reserved.</p>
       <a href="#" onclick="return false;">Privacy Policy</a>
     </div>
   </div>
@@ -2118,6 +2131,97 @@ function toggleFaq(el) {
     icon.textContent = '−';
   }
 }
+</script>
+
+
+<script>
+/* ── LIVE GOOGLE REVIEWS ── */
+(function() {
+
+  // Fallback data shown if API isn't configured yet
+  var FALLBACK = [
+    { author: "Michael T.",  rating: 5, text: "Very good pricing and one of the finest quality work I have seen. Totally recommend them.", date: "2024-11-15" },
+    { author: "Sarah M.",    rating: 5, text: "Great service and quality work! Caesar's team was professional, on time, and left everything spotless.", date: "2024-10-02" },
+    { author: "David R.",    rating: 5, text: "Hired them for exterior painting on my Alpharetta home. Outstanding results — clean lines, beautiful finish.", date: "2024-08-20" },
+    { author: "Jennifer L.", rating: 5, text: "Professional, fair pricing, and the work speaks for itself. Our interior looks brand new.", date: "2024-07-10" }
+  ];
+
+  function initial(name) {
+    return (name || "?").charAt(0).toUpperCase();
+  }
+
+  function renderFeatured(r) {
+    var q = document.getElementById("featured-quote");
+    var av = document.getElementById("featured-avatar");
+    var nm = document.getElementById("featured-name");
+    if (q) q.textContent = "\u201c" + r.text + "\u201d";
+    if (av) {
+      if (r.avatar) {
+        av.innerHTML = '<img src="' + r.avatar + '" alt="' + r.author + '" width="40" height="40">';
+      } else {
+        av.textContent = initial(r.author);
+      }
+    }
+    if (nm) nm.textContent = r.author;
+    var loc = document.getElementById("featured-loc");
+    if (loc) loc.textContent = r.date ? new Date(r.date).toLocaleDateString("en-US",{month:"long",year:"numeric"}) : "North Atlanta, GA";
+  }
+
+  function renderGrid(reviews) {
+    var grid = document.getElementById("reviews-grid");
+    if (!grid) return;
+    // Show reviews 1 onward (index 0 = featured)
+    var toShow = reviews.slice(1, 4);
+    grid.innerHTML = toShow.map(function(r) {
+      var avatarHtml = r.avatar
+        ? '<img src="' + r.avatar + '" alt="' + r.author + '" width="36" height="36">'
+        : initial(r.author);
+      return [
+        '<div class="review-tile">',
+        '  <div class="stars">★★★★★</div>',
+        '  <p>\u201c' + r.text.replace(/"/g,'&quot;') + '\u201d</p>',
+        '  <div class="review-tile-author">',
+        '    <div class="tile-avatar">' + avatarHtml + '</div>',
+        '    <div>',
+        '      <div class="tile-name">' + r.author + '</div>',
+        '      <div class="tile-loc">' + (r.date ? new Date(r.date).toLocaleDateString("en-US",{month:"short",year:"numeric"}) : "North Atlanta, GA") + '</div>',
+        '    </div>',
+        '  </div>',
+        '</div>'
+      ].join("\n");
+    }).join("\n");
+  }
+
+  function updateMeta(rating, count) {
+    var rEl = document.getElementById("live-rating");
+    var cEl = document.getElementById("live-count");
+    if (rEl) rEl.textContent = parseFloat(rating).toFixed(1);
+    if (cEl) cEl.textContent = count > 0 ? "Based on " + count + " Google Review" + (count !== 1 ? "s" : "") : "5-Star Google Rating";
+  }
+
+  function renderReviews(data) {
+    var reviews = (data && data.reviews && data.reviews.length > 0) ? data.reviews : FALLBACK;
+    renderFeatured(reviews[0]);
+    renderGrid(reviews);
+    updateMeta(data.rating || 5.0, data.user_ratings_total || reviews.length);
+
+    // Update schema rating if we got real data
+    if (data.configured && data.user_ratings_total > 0) {
+      // also update the review-bar count
+      var barCount = document.querySelector(".review-bar-count");
+      if (barCount) barCount.textContent = data.user_ratings_total + " Google Reviews";
+      var barScore = document.querySelector(".review-bar-score");
+      if (barScore) barScore.textContent = parseFloat(data.rating).toFixed(1);
+    }
+  }
+
+  // Fetch live reviews from our Vercel API route
+  fetch("/api/reviews")
+    .then(function(r) { return r.json(); })
+    .then(function(data) { renderReviews(data); })
+    .catch(function() { renderReviews({ reviews: FALLBACK, rating: 5.0, user_ratings_total: 4 }); });
+
+})();
 </script>
 
 </body>

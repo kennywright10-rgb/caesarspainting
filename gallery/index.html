@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painting Gallery | Caesar's Painting — Alpharetta & North Atlanta</title>
+  <meta name="description" content="See Caesar's Painting project photos — interior, exterior, cabinet, and deck painting across Alpharetta, Cumming & North Atlanta. Call (404) 916-3260 for a free estimate.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.caesarspainting.com/gallery">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+<div id="topbar"></div>
+<header id="main-nav" style="position:sticky;top:0;z-index:200;"></header>
+<div id="review-bar"></div>
+
+<div class="breadcrumb-bar">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">›</span><span>Gallery</span>
+    </nav>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="label">Our Work</span>
+    <h1>Painting Gallery</h1>
+    <p>Photos from real projects completed by Caesar's Painting across North Atlanta — interior, exterior, cabinets, decks, and commercial work.</p>
+    <div class="page-hero-actions">
+      <a href="/contact" class="btn-primary">Get a Free Estimate</a>
+      <a href="tel:+14049163260" class="hero-phone-inline">(404) 916-3260</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section style="padding: 80px 0;">
+    <div class="wrap">
+
+      <!-- Exterior Projects -->
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:24px;">Exterior Painting</h2>
+      <div class="gallery-grid" style="margin-bottom:56px;">
+        <div class="gallery-item">
+          <img src="/Atlanta Exterior Painting.png" alt="Exterior house painting in Atlanta, GA — Caesar's Painting" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/New Construction Paining Roswell.png" alt="New construction painting in Roswell, GA" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/Repainting Lawrenceville.png" alt="Home repainting in Lawrenceville, GA" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Interior & Specialty -->
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:24px;">Interior &amp; Specialty</h2>
+      <div class="gallery-grid" style="margin-bottom:56px;">
+        <div class="gallery-item">
+          <img src="/Interior Painting Duluth.png" alt="Interior painting in Duluth, GA — Caesar's Painting" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/Commercial Painting.png" alt="Commercial painting project — Caesar's Painting" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/Gwinnett Wood Repair.png" alt="Wood repair and painting in Gwinnett County, GA" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Alpharetta & Deck Projects -->
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:24px;">Deck Staining &amp; Alpharetta Projects</h2>
+      <div class="gallery-grid" style="margin-bottom:56px;">
+        <div class="gallery-item">
+          <img src="/Alpharetta Deck Staining.png" alt="Deck staining in Alpharetta, GA — Caesar's Painting" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/Atlanta Paining Pressure Washing.png" alt="Pressure washing and painting in Atlanta area" loading="lazy">
+        </div>
+        <div class="gallery-item" style="background:var(--warm-tan);display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;padding:24px;">
+            <p style="font-size:14px;color:var(--muted);">More photos coming soon</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:40px;background:var(--warm-tan);">
+        <p style="font-size:15px;color:var(--muted);max-width:480px;margin:0 auto 24px;">Like what you see? Get a free estimate for your home and let's create results you'll love just as much.</p>
+        <a href="/contact" class="btn-primary">Get My Free Estimate</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-band-inner">
+      <div><h2>Your Home Could Be Next</h2><p>Free estimates with fast turnaround. Serving all of North Atlanta.</p></div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+        <a href="/contact" class="btn-primary">Get My Free Estimate</a>
+        <a href="tel:+14049163260" class="btn-ghost">(404) 916-3260</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="main-footer"></div>
+<script src="/shared.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    injectSchema({
+      "@context": "https://schema.org",
+      "@graph": [
+        Object.assign(baseBusiness(), { aggregateRating: aggregateRating() }),
+        {
+          "@type": "ImageGallery",
+          "@id": "https://www.caesarspainting.com/gallery#webpage",
+          "url": "https://www.caesarspainting.com/gallery",
+          "name": "Painting Gallery | Caesar's Painting",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.caesarspainting.com" },
+              { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://www.caesarspainting.com/gallery" }
+            ]
+          }
+        }
+      ]
+    });
+  });
+</script>
+</body>
+</html>
