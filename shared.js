@@ -5,7 +5,7 @@
 
 /* ── GOOGLE PLACE ID ── */
 const GOOGLE_PLACE_ID = "ChIJEXg3ccO99YgRGuY3jy081mA";
-const GOOGLE_REVIEW_URL  = `https://search.google.com/local/reviews?placeid=${GOOGLE_PLACE_ID}`;
+const GOOGLE_REVIEW_URL  = `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`;
 const GOOGLE_WRITEREVIEW = `https://search.google.com/local/writereview?placeid=${GOOGLE_PLACE_ID}`;
 
 /* ── BUSINESS CONSTANTS ── */
@@ -333,7 +333,7 @@ function baseBusiness() {
       { "@type": "City", "name": "Sugar Hill" }
     ],
     "sameAs": [
-      "https://search.google.com/local/reviews?placeid=ChIJEXg3ccO99YgRGuY3jy081mA"
+      "https://www.google.com/maps/place/?q=place_id:ChIJEXg3ccO99YgRGuY3jy081mA"
     ]
   };
 }
