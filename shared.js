@@ -5,7 +5,7 @@
 
 /* ── GOOGLE PLACE ID ── */
 const GOOGLE_PLACE_ID = "ChIJEXg3ccO99YgRGuY3jy081mA";
-const GOOGLE_REVIEW_URL  = `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`;
+const GOOGLE_REVIEW_URL  = `https://share.google/uLOagq8If2ziWiqk4`;
 const GOOGLE_WRITEREVIEW = `https://search.google.com/local/writereview?placeid=${GOOGLE_PLACE_ID}`;
 
 /* ── BUSINESS CONSTANTS ── */
@@ -17,11 +17,11 @@ const BUSINESS = {
   phoneFmt: "+14049163260",
   email: "info@caesarspainting.com",
   address: {
-    street: "Alpharetta",
-    city: "Alpharetta",
+    street: "1357 Fairview Trail NW",
+    city: "Lawrenceville",
     state: "GA",
-    zip: "30009",
-    full: "Alpharetta, GA 30009"
+    zip: "30043",
+    full: "1357 Fairview Trail NW, Lawrenceville, GA 30043"
   },
   geo: { lat: 34.0754, lng: -84.2941 },
   rating: 5.0,
@@ -118,6 +118,7 @@ function activePath(href) {
 function injectTopbar() {
   const el = document.getElementById("topbar");
   if (!el) return;
+  el.className = "topbar";
   el.innerHTML = `
     <div class="wrap">
       <div class="topbar-left">
@@ -135,6 +136,8 @@ function injectTopbar() {
 function injectNav() {
   const el = document.getElementById("main-nav");
   if (!el) return;
+  el.style.background = "var(--navy)";
+  el.style.borderBottom = "1px solid rgba(255,255,255,0.07)";
 
   const svcLinks = NAV_SERVICES.map(s =>
     `<a href="${s.href}"${activePath(s.href)}>${s.label}</a>`).join("");
@@ -219,11 +222,11 @@ function injectFooter() {
           <div class="footer-brand">
             <img src="/logo.png" alt="Caesar's Painting" width="140" height="70" loading="lazy">
             <p>North Atlanta's trusted painting contractor. Quality craftsmanship, honest pricing, and zero shortcuts — every project, every time.</p>
-            <div class="footer-rating">
-              <span class="footer-stars">★★★★★</span>
-              <span>${BUSINESS.rating.toFixed(1)} · ${BUSINESS.reviewCount} Google Reviews</span>
-            </div>
+
             <a href="tel:${BUSINESS.phoneFmt}" class="footer-phone">${BUSINESS.phone}</a>
+            <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-top:10px;line-height:1.5;">
+              📍 ${BUSINESS.address.full}
+            </p>
           </div>
           <div class="footer-col">
             <h4>Services</h4>
@@ -333,7 +336,7 @@ function baseBusiness() {
       { "@type": "City", "name": "Sugar Hill" }
     ],
     "sameAs": [
-      "https://www.google.com/maps/place/?q=place_id:ChIJEXg3ccO99YgRGuY3jy081mA"
+      "https://share.google/uLOagq8If2ziWiqk4"
     ]
   };
 }
@@ -369,8 +372,6 @@ function reviewsSchema() {
 /* ── BUILD HOMEPAGE SCHEMA ── */
 function buildHomepageSchema() {
   const biz = baseBusiness();
-  biz.aggregateRating = aggregateRating();
-  biz.review = reviewsSchema();
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -401,8 +402,6 @@ function buildHomepageSchema() {
 /* ── BUILD SERVICE PAGE SCHEMA ── */
 function buildServiceSchema({ pageUrl, pageName, pageTitle, serviceType, breadcrumbs, faqs }) {
   const biz = baseBusiness();
-  biz.aggregateRating = aggregateRating();
-  biz.review = reviewsSchema();
   biz.hasOfferCatalog = {
     "@type": "OfferCatalog",
     "name": serviceType,
@@ -453,8 +452,6 @@ function buildServiceSchema({ pageUrl, pageName, pageTitle, serviceType, breadcr
 /* ── BUILD CITY PAGE SCHEMA ── */
 function buildCitySchema({ pageUrl, pageTitle, cityName, stateCode, breadcrumbs, faqs }) {
   const biz = baseBusiness();
-  biz.aggregateRating = aggregateRating();
-  biz.review = reviewsSchema();
   biz.serviceArea = {
     "@type": "City",
     "name": cityName,
@@ -599,7 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
   injectTopbar();
   injectNav();
   injectFooter();
-  injectReviewBar();
+  // injectReviewBar(); // removed during GBP appeal
   initMobileMenu();
   initDropdowns();
   initFAQ();
