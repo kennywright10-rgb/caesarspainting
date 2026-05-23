@@ -1,0 +1,68 @@
+{
+  "rewrites": [
+    {
+      "source": "/emergency",
+      "destination": "/emergency-seo-page.html"
+    },
+    {
+      "source": "/same-day",
+      "destination": "/same-day-landing-page.html"
+    },
+    {
+      "source": "/construction",
+      "destination": "/construction-landing-page.html"
+    },
+    {
+      "source": "/long-term-rental",
+      "destination": "/long-term-rental-landing-page.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/events-landing-page.html"
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you.html"
+    },
+    {
+      "source": "/porta-potty-rental-cumming-ga",
+      "destination": "/porta-potty-rental-cumming-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-alpharetta-ga",
+      "destination": "/porta-potty-rental-alpharetta-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-johns-creek-ga",
+      "destination": "/porta-potty-rental-johns-creek-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-milton-ga",
+      "destination": "/porta-potty-rental-milton-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-suwanee-ga",
+      "destination": "/porta-potty-rental-suwanee-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-woodstock-ga",
+      "destination": "/porta-potty-rental-woodstock-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-canton-ga",
+      "destination": "/porta-potty-rental-canton-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-marietta-ga",
+      "destination": "/porta-potty-rental-marietta-ga.html"
+    },
+    {
+      "source": "/porta-potty-rental-buford-ga",
+      "destination": "/porta-potty-rental-buford-ga.html"
+    },
+    {
+      "source": "/atlanta/metro",
+      "destination": "/atlanta-metro.html"
+    }
+  ]
+}

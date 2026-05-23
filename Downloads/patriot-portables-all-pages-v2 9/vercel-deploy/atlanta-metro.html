@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porta Potty Rental | Alpharetta, Marietta, Sandy Springs & Metro Atlanta | Patriot Portables</title>
+  <meta name="description" content="Porta potty rental serving Alpharetta, Marietta, Sandy Springs, Roswell, Dunwoody, Johns Creek & Cumming. Same-day delivery. We answer on the first ring. Call (678) 456-3488." />
+  <link rel="canonical" href="https://go.patriotportables.com/atlanta/metro" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red:        #C8102E;
+      --red-dark:   #9E0B24;
+      --navy:       #1B4FA8;
+      --navy-mid:   #163F8A;
+      --navy-dark:  #0D2B6B;
+      --white:      #FFFFFF;
+      --off-white:  #F4F7FC;
+      --gray:       #6B7280;
+      --light-gray: #E5E7EB;
+      --text-dark:  #0D1F3C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Source Sans 3", sans-serif;
+      background: var(--off-white);
+      color: var(--text-dark);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── TOP SUPPORT BAR ── */
+    .support-bar {
+      background: var(--navy-dark);
+      color: #CBD5E1;
+      text-align: center;
+      font-size: 13px;
+      padding: 7px 16px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    }
+    .nav-logos { display: flex; align-items: center; gap: 16px; }
+    .nav-logos img { height: 44px; object-fit: contain; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-phone {
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--text-dark);
+      letter-spacing: 0.02em;
+    }
+    .nav-cta {
+      background: var(--red);
+      color: var(--white);
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--red-dark); }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 11px 16px;
+      font-family: Oswald, sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .announce-bar a { color: var(--white); text-decoration: underline; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 40px 56px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid var(--red);
+      color: var(--red);
+      font-family: Oswald, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 3px;
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1.05;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 span { color: var(--red); }
+    .hero-sub {
+      font-size: 18px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+    .hero-sub strong { color: var(--text-dark); font-weight: 700; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--red-dark); }
+    .btn-secondary {
+      color: var(--navy-dark);
+      border: 2px solid var(--navy-dark);
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 4px;
+      transition: all .2s;
+    }
+    .btn-secondary:hover { background: var(--navy-dark); color: var(--white); }
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      font-size: 14px;
+      color: var(--gray);
+      font-weight: 600;
+    }
+    .hero-trust span::before { content: "✓ "; color: var(--red); }
+    .hero-img {
+      text-align: center;
+      position: relative;
+    }
+    .hero-img img {
+      max-width: 340px;
+      width: 100%;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+    }
+    .best-of-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 100px;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 28px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: Oswald, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--red);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      display: block;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 72px 40px; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .section-tag {
+      font-family: Oswald, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 1.08;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 40px;
+    }
+    h2 span { color: var(--red); }
+
+    /* ── CITIES SECTION ── */
+    .cities-section { background: var(--white); }
+    .cities-intro {
+      max-width: 620px;
+      font-size: 17px;
+      color: #374151;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .city-card {
+      background: var(--off-white);
+      border: 1.5px solid var(--light-gray);
+      border-left: 4px solid var(--red);
+      border-radius: 6px;
+      padding: 18px 20px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .city-card:hover { border-color: var(--navy); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .city-name {
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .city-county { font-size: 13px; color: var(--gray); }
+
+    /* ── USE CASES ── */
+    .use-cases-section { background: var(--off-white); }
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .use-case-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-left: 4px solid var(--red);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .use-case-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+    .use-case-card h3 {
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .use-case-card p { font-size: 15px; color: #4B5563; line-height: 1.6; }
+    .use-cases-cta {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 17px;
+      color: var(--gray);
+    }
+    .use-cases-cta strong { color: var(--text-dark); }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { background: var(--white); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .step { position: relative; }
+    .step-num {
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      color: var(--light-gray);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .step h3 {
+      font-family: Oswald, sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .step p { font-size: 15px; color: #4B5563; line-height: 1.6; }
+
+    /* ── QUOTE SECTION ── */
+    .quote-section { background: var(--off-white); }
+    .quote-inner {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 60px;
+      align-items: start;
+    }
+    .quote-left h2 { margin-bottom: 16px; }
+    .quote-left p { font-size: 17px; color: #374151; line-height: 1.7; margin-bottom: 24px; }
+    .quote-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .quote-bullets li {
+      font-size: 15px;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quote-bullets li::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: var(--red);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+      background-size: cover;
+      flex-shrink: 0;
+    }
+
+    .quote-form-card {
+      background: var(--white);
+      border: 2px solid var(--red);
+      border-radius: 10px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .quote-form-card h3 {
+      font-family: Oswald, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      margin-bottom: 24px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #374151;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid var(--light-gray);
+      border-radius: 5px;
+      padding: 11px 14px;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: border-color .2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-submit {
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background .2s;
+    }
+    .form-submit:hover { background: var(--red-dark); }
+    .form-disclaimer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    /* ── WHY SECTION ── */
+    .why-section {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+    }
+    .why-section h2, .why-section .section-tag { color: var(--white); }
+    .why-section h2 span { color: var(--red); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .why-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-top: 3px solid var(--red);
+    }
+    .why-card h3 {
+      font-family: Oswald, sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .why-card p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--white); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-card {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-left: 4px solid var(--red);
+    }
+    .stars { color: var(--red); font-size: 18px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonial-card blockquote {
+      font-style: italic;
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 64px 40px;
+    }
+    .final-cta h2 {
+      color: var(--white);
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+    .final-cta p { font-size: 18px; opacity: 0.9; margin-bottom: 32px; }
+    .final-cta a {
+      background: var(--white);
+      color: var(--red);
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      padding: 18px 44px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: opacity .2s;
+    }
+    .final-cta a:hover { opacity: 0.92; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 40px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    footer a { color: rgba(255,255,255,0.8); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 12px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
+      .hero-img { order: -1; }
+      .hero-img img { max-width: 240px; }
+      h1 { font-size: 40px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .use-cases-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .quote-inner { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .cities-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 48px 20px; }
+      h2 { font-size: 32px; }
+    }
+    @media (max-width: 600px) {
+      .use-cases-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+      h1 { font-size: 34px; }
+      .nav-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="support-bar">
+    Support Our Heroes: Proceeds Benefit Wounded Warriors &nbsp;|&nbsp; Locally Owned &nbsp;|&nbsp; Same Day Delivery
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logos">
+      <img src="https://static.wixstatic.com/media/eb4cc4_47f0023df1c84ca7a25e4957ce92d77a~mv2.png" alt="Patriot Portables" />
+      <img src="https://static.wixstatic.com/media/eb4cc4_aae10d276e204f25ab2208cce5736e94~mv2.png" alt="Wounded Warrior Project" />
+    </div>
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:6784563488">(678) 456-3488</a>
+      <a class="nav-cta" href="#quote-form">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    Now Serving Metro Atlanta &nbsp;—&nbsp; <a href="tel:6784563488">(678) 456-3488</a> &nbsp;—&nbsp; Same-Day Delivery Available
+  </div>
+
+  <!-- HERO -->
+  <div style="background: var(--white);">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">📍 Porta Potty Rental · Metro Atlanta</div>
+        <h1>Porta Potty Rental<br /><span>in Your Neighborhood.</span></h1>
+        <p class="hero-sub">
+          Serving <strong>Alpharetta, Marietta, Sandy Springs, Roswell, Dunwoody, Johns Creek & Cumming.</strong>
+          Patriot Portables delivers <strong>sparkling clean</strong> portable restrooms
+          with <strong>same-day delivery</strong> and a first-ring answer — every time.
+        </p>
+        <div class="hero-btns">
+          <a class="btn-primary" href="tel:6784563488">
+            📞 Call Now: (678) 456-3488
+          </a>
+          <a class="btn-secondary" href="#quote-form">Get a Fast Quote</a>
+        </div>
+        <div class="hero-trust">
+          <span>Same-day delivery</span>
+          <span>First ring answer</span>
+          <span>Woman-owned · Veteran-supported</span>
+          <span>10-point inspected</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://go.patriotportables.com/porta-potty.png" alt="Patriot Portables — Clean Porta Potty Unit" />
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">Same Day</span>
+      <span class="stat-label">Delivery Available</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1st Ring</span>
+      <span class="stat-label">We Answer Every Call</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">10-Point</span>
+      <span class="stat-label">Cleaning Inspection</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">7 Cities</span>
+      <span class="stat-label">Metro Atlanta Coverage</span>
+    </div>
+  </div>
+
+  <!-- CITIES SECTION -->
+  <section class="section cities-section">
+    <div class="section-inner">
+      <div class="section-tag">Service Area</div>
+      <h2>We Deliver to <span>Your City</span></h2>
+      <p class="cities-intro">
+        Based in Cumming, GA — we know Metro Atlanta's roads, jobsites, and neighborhoods.
+        If you're in one of these cities, we can have a clean, stocked unit on your site today.
+      </p>
+      <div class="cities-grid">
+        <div class="city-card">
+          <div class="city-name">Alpharetta</div>
+          <div class="city-county">Fulton County</div>
+        </div>
+        <div class="city-card">
+          <div class="city-name">Marietta</div>
+          <div class="city-county">Cobb County</div>
+        </div>
+        <div class="city-card">
+          <div class="city-name">Sandy Springs</div>
+          <div class="city-county">Fulton County</div>
+        </div>
+        <div class="city-card">
+          <div class="city-name">Roswell</div>
+          <div class="city-county">Fulton County</div>
+        </div>
+        <div class="city-card">
+          <div class="city-name">Dunwoody</div>
+          <div class="city-county">DeKalb County</div>
+        </div>
+        <div class="city-card">
+          <div class="city-name">Johns Creek</div>
+          <div class="city-county">Fulton County</div>
+        </div>
+        <div class="city-card">
+          <div class="city-name">Cumming</div>
+          <div class="city-county">Forsyth County</div>
+        </div>
+        <div class="city-card" style="border-left-color: var(--navy); background: var(--navy-dark); color: white;">
+          <div class="city-name" style="color: white;">& Surrounding Areas</div>
+          <div class="city-county" style="color: rgba(255,255,255,0.65);">Call to confirm your location</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="section use-cases-section">
+    <div class="section-inner">
+      <div class="section-tag">Common Situations</div>
+      <h2>Whatever the Job,<br /><span>We've Got You Covered</span></h2>
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <span class="use-case-icon">🏗️</span>
+          <h3>Construction Sites</h3>
+          <p>Long-term jobsite rentals across Metro Atlanta. We service, restock, and manage everything — daily, weekly, or monthly. OSHA-compliant units ready to roll.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🎪</span>
+          <h3>Outdoor Events</h3>
+          <p>Community festivals, HOA events, school functions, road races. We've set up hundreds of events across Forsyth, Fulton, and Cobb counties on tight timelines.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🔧</span>
+          <h3>Renovation Projects</h3>
+          <p>Kitchen or bathroom remodel? Keep your crew comfortable and your home livable. We deliver for the duration of your project and pick up when you're done.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🏡</span>
+          <h3>Residential & HOA</h3>
+          <p>Property work, landscaping crews, pool installations, or neighborhood block parties. Flexible terms — no long contracts required.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🚰</span>
+          <h3>Emergency Situations</h3>
+          <p>Water main break. Septic failure. Plumbing emergency. We dispatch same-day so your crew or family isn't left without facilities while repairs are underway.</p>
+        </div>
+        <div class="use-case-card">
+          <span class="use-case-icon">🏃</span>
+          <h3>Races & Festivals</h3>
+          <p>Atlanta 5Ks, charity runs, outdoor festivals. Short-notice is our specialty. We've delivered across Metro Atlanta on a few hours' notice more times than we can count.</p>
+        </div>
+      </div>
+      <p class="use-cases-cta">Whatever your situation — call <strong>(678) 456-3488</strong>. We'll figure it out.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-section">
+    <div class="section-inner">
+      <div class="section-tag">How It Works</div>
+      <h2>From Your Call to<br /><span>Clean Unit on Site — Fast.</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>You Call or Submit</h3>
+          <p>Call (678) 456-3488 or fill out the quick form. We pick up on the first ring — no hold music, no voicemail runaround.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>We Confirm & Dispatch</h3>
+          <p>We confirm your city, number of units, and delivery window. Same-day available across all Metro Atlanta service cities.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Spotless Unit Arrives</h3>
+          <p>Every unit is 10-point inspected before delivery. Stocked with supplies. Placed exactly where you need it.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>We Handle Everything</h3>
+          <p>Servicing, restocking, pickup — we manage it all. You focus on your project. We handle the rest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM -->
+  <section class="section quote-section" id="quote-form">
+    <div class="section-inner">
+      <div class="quote-inner">
+        <div class="quote-left">
+          <div class="section-tag">Get a Quote</div>
+          <h2>Fast Quote.<br /><span>Faster Delivery.</span></h2>
+          <p>Fill out the form and we'll get back to you within minutes. For immediate needs, call us directly at <strong>(678) 456-3488</strong> — we answer on the first ring.</p>
+          <ul class="quote-bullets">
+            <li>Same-day delivery available across Metro Atlanta</li>
+            <li>ADA compliant units in stock</li>
+            <li>Flexible rental periods — daily, weekly, monthly</li>
+            <li>Includes all supplies and scheduled servicing</li>
+            <li>No hidden fees — transparent pricing always</li>
+            <li>Woman-owned, locally operated since 2002</li>
+          </ul>
+        </div>
+        <div class="quote-form-card">
+          <h3>Request a Quote</h3>
+          <form id="quote-form-el" action="https://formspree.io/f/xjgepbqq" method="POST">
+            <input type="hidden" name="_source" value="atlanta-metro" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="first_name" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(678) 000-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@company.com" />
+            </div>
+            <div class="form-group">
+              <label for="city">Delivery City *</label>
+              <select id="city" name="city" required>
+                <option value="">Select your city...</option>
+                <option>Alpharetta</option>
+                <option>Marietta</option>
+                <option>Sandy Springs</option>
+                <option>Roswell</option>
+                <option>Dunwoody</option>
+                <option>Johns Creek</option>
+                <option>Cumming</option>
+                <option>Other / Not listed</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="units">Units Needed</label>
+                <select id="units" name="units">
+                  <option value="">Select...</option>
+                  <option>1 Unit</option>
+                  <option>2 Units</option>
+                  <option>3 Units</option>
+                  <option>4–5 Units</option>
+                  <option>6+ Units</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="rental-type">Rental Type</label>
+                <select id="rental-type" name="rental_type">
+                  <option value="">Select...</option>
+                  <option>Emergency / Today</option>
+                  <option>Construction Site</option>
+                  <option>Event</option>
+                  <option>Monthly Rental</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Situation</label>
+              <textarea id="message" name="message" placeholder="Construction site in Alpharetta, need 2 units starting Monday..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Get My Quote Now →</button>
+            <p class="form-disclaimer">No spam. We'll only contact you about your rental request.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PATRIOT -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="section-tag">Why Patriot Portables</div>
+      <h2>The Cleanest Units.<br /><span>The Fastest Response.</span></h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>We Answer First Ring</h3>
+          <p>No hold music. No callbacks. No voicemail. When you need service in Alpharetta or Sandy Springs, someone picks up immediately — every time.</p>
+        </div>
+        <div class="why-card">
+          <h3>Same-Day Delivery</h3>
+          <p>Units ready to roll 7 days a week across all 7 Metro Atlanta cities. Construction emergency on a Monday? Event pop-up on Saturday? We dispatch fast.</p>
+        </div>
+        <div class="why-card">
+          <h3>Sparkling Clean Units</h3>
+          <p>Every unit goes through our rigorous 10-point inspection before delivery. No dirty units. No odor. No embarrassment. That's our guarantee.</p>
+        </div>
+        <div class="why-card">
+          <h3>Locally Owned & Operated</h3>
+          <p>Woman-owned, veteran-supported, and based right here in Cumming, GA. We serve Forsyth, Fulton, Cobb, and DeKalb counties — our neighbors.</p>
+        </div>
+        <div class="why-card">
+          <h3>ADA Compliant Available</h3>
+          <p>ADA compliant units stocked and ready. We ensure your site or event meets accessibility requirements without any extra hassle.</p>
+        </div>
+        <div class="why-card">
+          <h3>Transparent Pricing</h3>
+          <p>No hidden fees. No surprise charges. We give you a clear quote upfront and stick to it. What we quote is what you pay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-section">
+    <div class="section-inner">
+      <div class="section-tag">Customer Stories</div>
+      <h2>Real People.<br /><span>Real Results. Solved.</span></h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"When our water main broke on a Sunday, Patriot Portables had a restroom delivered within hours. Their quick response and clean units were a lifesaver. I couldn't believe how fast they got here."</blockquote>
+          <div class="testimonial-author">Sarah T. — Alpharetta, GA</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"We had an emergency at our construction site and Patriot Portables came through with same-day delivery. The unit was spotless and they answered the phone on the first ring. Incredible service."</blockquote>
+          <div class="testimonial-author">John M. — Roswell, GA</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I've used several porta potty companies over the years for our job sites. Patriot is on another level. The units are clean, they show up when they say, and they actually answer the phone."</blockquote>
+          <div class="testimonial-author">Mike D. — General Contractor, Canton, GA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Ready to Book Your Rental?</h2>
+    <p>Same-day delivery available. We answer on the first ring.<br />Serving all of Metro Atlanta — Alpharetta to Dunwoody and beyond.</p>
+    <a href="tel:6784563488">(678) 456-3488</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Patriot Portables &nbsp;·&nbsp; Cumming, GA &nbsp;·&nbsp; Serving Metro Atlanta &nbsp;·&nbsp; <a href="tel:6784563488">(678) 456-3488</a></p>
+    <p>Woman-Owned · Veteran-Supported · Licensed & Insured</p>
+  </footer>
+
+</body>
+</html>
